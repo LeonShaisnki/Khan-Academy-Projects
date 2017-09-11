@@ -1,0 +1,40 @@
+//Circle Star 1 Variables
+var xPos = 0;
+var yPos = 0;
+var Width=10;
+var Height=10;
+
+//Circle Star 2 Variables
+var xPos2 = 600;
+var yPos2 = 10;
+var Width2=6;
+var Height2=6;
+
+
+draw = function() {
+    background(29, 40, 115);
+    //circle Star Shape
+    fill(255, 242, 0);
+    ellipse(xPos, yPos, Width, Height);
+    
+    //Changing the positions of the first circle
+    xPos+=2;
+    yPos+=0.75;
+    
+    //Changing the parameters of the second circle
+    Width+=0.12;
+    Height+=0.12;
+    
+    //circle Star Shape
+    fill(255, 242, 0);
+    ellipse(xPos2, yPos2, Width2, Height2);
+    
+    //Changing the positions of the second circle
+    xPos2-=2;
+    yPos2+=0.29;
+    
+    //Changing the parameters of the second circle
+    Width2+=0.05;
+    Height2+=0.05;
+    
+};
