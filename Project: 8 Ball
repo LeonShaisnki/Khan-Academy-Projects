@@ -1,0 +1,41 @@
+fill(0, 0, 0);
+ellipse(200, 200, 375, 375);
+fill(60, 0, 255);
+triangle(200, 104, 280, 280, 120, 280);
+fill(255, 255, 255);
+mouseClicked = function ()
+{
+    var answer=floor(random(0, 5));
+    
+    fill(0, 0, 0);
+    ellipse(200, 200, 375, 375);
+    fill(60, 0, 255);
+    triangle(200, 104, 280, 280, 120, 280);
+    
+    if (answer === 0) {
+    fill(79, 227, 141);
+    text("COME", 181, 200);
+    text("AGAIN?", 180, 229);
+    }
+    else if (answer === 1){
+        fill(89, 255, 0);
+    text("YES", 190, 200);
+    }
+    else if (answer === 2){
+        fill(3, 0, 0);
+        text("NO", 192, 200);
+    }
+    else if (answer === 3){
+        fill(230, 255, 0);
+        text("ARE YOU", 175, 200);
+        text("SERIOUS?", 175, 220);
+    }
+    else if (answer === 4) {
+        fill(255, 0, 0);
+        text("Consider", 175, 214);
+        text("Other", 184, 230);
+        text("Options", 178, 245);
+        
+    }
+
+};
