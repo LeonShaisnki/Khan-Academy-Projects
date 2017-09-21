@@ -1,0 +1,68 @@
+background(89, 216, 255);
+text("Press the mouse button to draw fish. Press space to draw overlapping fish!", 0, 19, 450, 50);
+
+//The function that actually draws the fish
+var drawFish = function()
+{
+
+   
+
+    var colour1 = floor(random(0, 255));
+    var colour2 = floor(random(0, 255));
+    var colour3 = floor(random(0, 255));
+
+    var centerX = floor(random(0, 400));
+    var centerY = floor(random(0, 400));
+    var bodyLength = floor(random(50, 200));
+    var bodyHeight = floor(random(20, 150));
+    var bodyColor = color(colour1, colour2, colour3);
+    
+    
+  noStroke();
+fill(bodyColor);
+// body
+ellipse(centerX, centerY, bodyLength, bodyHeight);
+// tail
+var tailWidth = bodyLength/4;
+var tailHeight = bodyHeight/2;
+triangle(centerX-bodyLength/2, centerY,
+         centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+         centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+// eye
+fill(33, 33, 33);
+ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);
+    
+};
+
+
+//This funciton redraws the fish when the mouse is clicked
+mouseClicked = function ()
+{
+    background(89, 216, 255);
+    drawFish();
+    drawFish();
+    drawFish();
+
+};
+
+//Pressing space makes more fish thanks to this function
+keyTyped=function (space)
+{
+    drawFish();
+    drawFish();
+    drawFish();
+};
+
+//Seaweed drawing function
+draw = function() {
+    
+    var seaweedX = 370;
+    for (var n=0; n <23; n++)
+    {
+     image(getImage("avatars/leaf-green"), seaweedX-n*17,       298, 35, 222);
+     image(getImage("avatars/leaf-green"), seaweedX-n*21,       298,77, 222);
+        
+    }
+    
+
+};
