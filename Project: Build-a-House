@@ -1,0 +1,81 @@
+background(219, 255, 255);
+
+//Base triangle for the roof
+fill(174, 180, 214);
+triangle(200, 28, 350, 150, 50, 150);
+
+//Base frame for the house
+fill(255, 255, 255);
+rect(60, 150, 280, 207);
+
+//Door
+fill(120, 80, 19);
+rect(180, 280, 40, 77);
+
+//Circle windows in the middle of the house
+fill(0, 230, 255);
+ellipse(200, 208, 66, 60);
+
+//Loop drawing the top 2 windows
+for(var x = 80; x < 400; x += 80) {
+    fill(0, 230, 255);
+    rect(x, 178, 75, 60);
+    x += 80;
+}
+//Loop drawing the bottom 2 windows
+for(var x = 80; x < 400; x += 80) {
+    fill(0, 230, 255);
+    rect(x, 275, 75, 60);
+    x += 80;
+}
+//Loop drawing the grass
+for(var g = 0; g < 400; g += 101) {
+    var grass = getImage("cute/GrassBlock");
+    image(grass, g, 306);
+}
+
+//FUnction drawing the roof
+draw = function() 
+{
+    var y=29;
+    var x1=200;
+    var x2=200;
+    
+    while (y>28 && y<150 )
+    {
+        y++;
+        x1=x1-1.25;
+        x2=x2+1.25;
+        fill(143, 24, 217);
+        
+        //loop that draws the roof (the roof is actually           just a bunch of ellipses drawn closely together by         this loop
+        /*for (var n=x1; n<x2; n++)
+        {
+            fill(252, 28, 28);
+            ellipse(n, y, 2, 2);   
+        }*/
+
+        
+    }
+    
+    //Making the second floor under house arrest
+    var x3 = 60;
+    var x4 = 315;
+    
+    for (var z=x3; z<x4;z=z+10)
+    {
+        
+        image(getImage("cute/WoodBlock"), z, 139, 30, 39);
+        image(getImage("cute/WoodBlock"), z, 223, 30, 53);
+        
+        
+        
+    }
+    
+    //Making the bars holding back the second floor (over the windows)
+    x4=340;
+    for (var z=x3; z<x4;z=z+10)
+    {
+        image(getImage("cute/WoodBlock"), z, 150, 5, 88);
+    }    
+};
